@@ -1,0 +1,11 @@
+type GoogleData {
+  id: ID!
+  token: String!
+}
+
+type User {
+  id: ID!
+  fullName: String!
+  email: String!
+  googleProvider: GoogleData!
+}

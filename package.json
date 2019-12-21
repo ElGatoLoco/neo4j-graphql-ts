@@ -1,0 +1,47 @@
+{
+  "name": "neo4j-graphql-ts",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "NODE_ENV=development nodemon -e ts,json,graphql,js --exec ts-node src/index.ts",
+    "build": "NODE_ENV=production rm -rf ./dist && tsc -p tsconfig.json && cp ./src/schema.graphql ./dist/",
+    "prod": "NODE_ENV=production node ./dist/index.js",
+    "lint": "tslint -c tslint.json --project .",
+    "lint:fix": "tslint -c tslint.json --project . --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pretty-quick --staged && yarn tsc"
+    }
+  },
+  "dependencies": {
+    "apollo-boost": "^0.4.7",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.16",
+    "apollo-server": "^2.9.14",
+    "apollo-server-express": "^2.9.14",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql-tag": "^2.10.1",
+    "graphql-tools": "^4.0.6",
+    "neo4j-driver": "^4.0.1",
+    "neo4j-graphql-js": "^2.11.0",
+    "node-fetch": "^2.6.0",
+    "uuid": "^3.3.3",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.21",
+    "husky": "^3.1.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.4"
+  },
+  "license": "MIT"
+}
