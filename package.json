@@ -28,7 +28,7 @@
     "graphql-tools": "^4.0.6",
     "neo4j-driver": "^4.0.1",
     "neo4j-graphql-js": "^2.11.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "uuid": "^3.3.3",
     "winston": "^3.2.1"
   },
